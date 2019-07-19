@@ -7,7 +7,7 @@ import Control.Applicative
 import Control.Monad
 
 parseTerm :: Parser AST.Term
-parseTerm = parseSimpleExpr <|> parseApp <|> parseP
+parseTerm = parseApp <|> parseSimpleExpr <|> parseP
 
 parseSimpleExpr :: Parser AST.Term
 parseSimpleExpr = parseAbs <|> parseVar
