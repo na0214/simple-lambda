@@ -1,6 +1,10 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
-import Lib
+import Data.Attoparsec.Text hiding (take)
+import ParserLam
+import Ast
 
 main :: IO ()
-main = someFunc
+main = print $ (parse parseTerm "$x.x") `feed` ""
